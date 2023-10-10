@@ -15,6 +15,20 @@
         <div class="row">
             <div class="col md-12">
                 <h2>student list <button type="button" class="btn btn-success pull-right" data-toggle = "modal" data-target="#mymodal" >add student data</button></h2>
+
+
+               {% with messages = get_flashed_messages() %}
+               
+               {% if messages  %}
+
+               {% for message in messages %}
+
+               {{message}}
+
+               {% endfor %}
+               {% endif %}
+               {% endwith %}
+
                 <table class="table table-striped">
                     <tr>
                         <th>Serial</th>
