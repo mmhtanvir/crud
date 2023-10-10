@@ -3,7 +3,7 @@ from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
-SECRET_KEY = '18ee19a518f7d69c424d6893151d3525f9fd9e98986626af'
+app.SECRET_KEY = 'flash message'
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
