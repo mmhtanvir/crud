@@ -23,7 +23,13 @@
 
                {% for message in messages %}
 
-               {{message}}
+               <div class="alert alert-success alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+                  {{message}}
+               </div>
+
 
                {% endfor %}
                {% endif %}
@@ -38,16 +44,21 @@
                         <th>Action</th>
                     </tr>
 
+                    {% for row in crud %}
+
                     <tr>
-                        <td>01</td>
-                        <td>Tanvir</td>
-                        <td>tanvir@gmail.com</td>
-                        <td>9043040938-323</td>
+                        <td>{{row.0}}</td>
+                        <td>{{row.1}}</td>
+                        <td>{{row.2}}</td>
+                        <td>{{row.3}}</td>
                         <td>
-                            <a href="" class="btn btn-warning btn-xs" data-target="#modaledit" data-toggle="modal">Edit</a>
-                            <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure to Delete This Data ')">Delete</a>
+                            <a href="/update/{{row.0}}" class="btn btn-warning btn-xs" data-target="#modaledit {{row.0}}" data-toggle="modal">Edit</a>
+                            <a href="/delete/{{row.0}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure to Delete This Data ')">Delete</a>
                         </td>
                     </tr>
+
+                    {% endfor %}
+
                 </table>
             </div>
         </div>
